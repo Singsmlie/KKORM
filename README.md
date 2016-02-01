@@ -1,1 +1,70 @@
 # KKORM
+
+数据库ORM 依赖FMDB
+
+使用方法
+
+1 添加系统library  libsqlite3.dylib
+2 import "FMDB.h"
+3 import "KKORMLibrary.h"
+4 新建Model类 继承 KKORMModel
+
+例子：
+
+@interface YFDBPersonModel : KKORMModel
+
+@property (nonatomic, copy)   NSString *name;
+@property (nonatomic, assign) NSInteger age;
+@property (nonatomic, assign) NSInteger year;
+@property (nonatomic, copy)   NSString *imageUrl;
+@property (nonatomic, copy)   NSString *host;
+
+@end
+
+5 重写方法
+
+@implementation YFDBPersonModel
+
+/**
+*  必须重写 可以自定义
+*
+*  @return <#return value description#>
+*/
++ (NSString *)tableName
+{
+//自定义
+//return (NSString *)PersonTableName;
+return NSStringFromClass(self);
+}
+
+/**
+*  必须重写
+*
+*  @return 是否是抽象类
+*/
++ (BOOL)isAbstract
+{
+return NO;
+}
+
+/**
+*  字段名称 key需要与属性名称对应
+*  默认uid 主键 自增
+*  自增例子  参考 [super mapping]
+*
+*  @return 字段名称列表Dic
+*/
++ (NSDictionary *)mapping
+{
+NSMutableDictionary *mapping = [NSMutableDictionary dictionaryWithDictionary:[super mapping]];
+[mapping setObject:[[FMDBORMColumn alloc]initWithColumnName:@"name" andType:FMDBORMTypeText] forKey:@"name"];
+[mapping setObject:[[FMDBORMColumn alloc]initWithColumnName:@"age" andType:FMDBORMTypeInteger] forKey:@"age"];
+[mapping setObject:[[FMDBORMColumn alloc] initWithColumnName:@"year" andType:FMDBORMTypeInteger andExtraModifier:@[FMDBORMExtraDefault(@"0")]] forKey:@"year"];
+[mapping setObject:[[FMDBORMColumn alloc]initWithColumnName:@"imageUrl" andType:FMDBORMTypeText andExtraModifier:@[FMDBORMExtraDefault(@"http://www.baidu.com")]] forKey:@"imageUrl"];
+[mapping setObject:[[FMDBORMColumn alloc]initWithColumnName:@"host" andType:FMDBORMTypeText andExtraModifier:@[FMDBORMExtraDefault(@"http://www.baidu.com")]] forKey:@"host"];
+return mapping;
+}
+@end
+
+6 使用请看单元测试
+7 可以直接使用sql 语句，使用请看FMDB 文件夹中 FMDB/sample/main.m

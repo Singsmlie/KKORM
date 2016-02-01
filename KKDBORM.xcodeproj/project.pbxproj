@@ -30,6 +30,7 @@
 		0A970DDE1C5DF72800689F71 /* READ.me in Resources */ = {isa = PBXBuildFile; fileRef = 0A970DDD1C5DF72800689F71 /* READ.me */; };
 		0A970DE51C5DF7E300689F71 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 0A970DE31C5DF7E300689F71 /* sqlite3.c */; };
 		0A970DE81C5DF89500689F71 /* KKPersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A970DE71C5DF89500689F71 /* KKPersonModel.m */; };
+		0ADEED4D1C5EFF7A0056A234 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 0ADEED4C1C5EFF7A0056A234 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		0A970DE41C5DF7E300689F71 /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
 		0A970DE61C5DF89500689F71 /* KKPersonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKPersonModel.h; sourceTree = "<group>"; };
 		0A970DE71C5DF89500689F71 /* KKPersonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKPersonModel.m; sourceTree = "<group>"; };
+		0ADEED4C1C5EFF7A0056A234 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 		0A8394C01C241A1A009D617D = {
 			isa = PBXGroup;
 			children = (
+				0ADEED4C1C5EFF7A0056A234 /* README.md */,
 				0A8394CB1C241A1A009D617D /* KKDBORM */,
 				0A8394E51C241A1B009D617D /* KKDBORMTests */,
 				0A8394F01C241A1B009D617D /* KKDBORMUITests */,
@@ -428,6 +431,7 @@
 				0A8394D11C241A1B009D617D /* AppDelegate.m in Sources */,
 				0A8395261C241A42009D617D /* FMStatementQuotedRecogniser.m in Sources */,
 				0A8395281C241A42009D617D /* FMDatabaseAdditions.m in Sources */,
+				0ADEED4D1C5EFF7A0056A234 /* README.md in Sources */,
 				0A83952B1C241A42009D617D /* FMResultSet.m in Sources */,
 				0A970DE81C5DF89500689F71 /* KKPersonModel.m in Sources */,
 				0A970DD61C5DF3FE00689F71 /* KKORMHelper.m in Sources */,
